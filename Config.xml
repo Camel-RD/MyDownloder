@@ -2,5 +2,5 @@
 <MySettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <DownloadTo>C:\A0</DownloadTo>
   <ShutDown>true</ShutDown>
-  <FontSize>12</FontSize>
+  <FontSize>10</FontSize>
 </MySettings>
