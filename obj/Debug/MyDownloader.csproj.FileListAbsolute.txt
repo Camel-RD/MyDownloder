@@ -1,0 +1,10 @@
+C:\A1-docs\c_net\MyDownloader\bin\Debug\MyDownloader.exe.config
+C:\A1-docs\c_net\MyDownloader\bin\Debug\MyDownloader.exe
+C:\A1-docs\c_net\MyDownloader\bin\Debug\MyDownloader.pdb
+C:\A1-docs\c_net\MyDownloader\obj\Debug\MyDownloader.csprojResolveAssemblyReference.cache
+C:\A1-docs\c_net\MyDownloader\obj\Debug\MyDownloader.Form1.resources
+C:\A1-docs\c_net\MyDownloader\obj\Debug\MyDownloader.Properties.Resources.resources
+C:\A1-docs\c_net\MyDownloader\obj\Debug\MyDownloader.csproj.GenerateResource.Cache
+C:\A1-docs\c_net\MyDownloader\obj\Debug\MyDownloader.exe
+C:\A1-docs\c_net\MyDownloader\obj\Debug\MyDownloader.pdb
+C:\A1-docs\c_net\MyDownloader\obj\Debug\MyDownloader.FormShutdown.resources
