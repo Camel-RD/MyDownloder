@@ -834,8 +834,6 @@ namespace MyDownloader
 
             LastSpeedCheckTime = sw.ElapsedMilliseconds;
             BytesForSpeedCheck = 0;
-
-            LogMsg("CheckSpeed");
         }
 
         private void ResetSpeedData()
@@ -881,15 +879,13 @@ namespace MyDownloader
 
             try
             {
-                while (true) //(bytesToRead>0)
+                while (true) 
                 {
                     if (_StopRequested) break;
 
                     int n = ns.Read(buffer, 0, buffer.Length);
 
                     if (_StopRequested) break;
-
-                    CheckSpeed(n);
 
                     if (n == 0)
                     {
@@ -898,11 +894,11 @@ namespace MyDownloader
                     }
                     fs.Write(buffer, 0, n);
                     fs.Flush();
+
                     BytesRead += n;
                     bytesToRead -= n;
-#if DEBUG
-                    //Thread.Sleep(50);
-#endif
+
+                    CheckSpeed(n);
                 }
 
             }

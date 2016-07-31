@@ -517,12 +517,12 @@ namespace MyLIB.Misc
         {
             double d = bytes;
             string s = "b";
-            if (bytes < 1 << 20)
+            if (bytes < 1024 * 1000)
             {
                 d = Math.Round((double)bytes / 1024d, 2);
                 s = "kb";
             }
-            else if ((bytes < 1 << 30))
+            else if ((bytes < (1 << 20) * 1000))
             {
                 d = Math.Round((double)bytes / 1024d / 1024d, 2);
                 s = "mb";

@@ -218,38 +218,38 @@
             this.miQueueEnable,
             this.miQueueDisable});
             this.menuDgvQueue.Name = "menuDgvQueue";
-            this.menuDgvQueue.Size = new System.Drawing.Size(177, 130);
+            this.menuDgvQueue.Size = new System.Drawing.Size(185, 130);
             // 
             // miQueueReset
             // 
             this.miQueueReset.Name = "miQueueReset";
-            this.miQueueReset.Size = new System.Drawing.Size(176, 30);
+            this.miQueueReset.Size = new System.Drawing.Size(184, 30);
             this.miQueueReset.Text = "↺ Reset";
             this.miQueueReset.Click += new System.EventHandler(this.miQueueReset_Click);
             // 
             // miQueueRemove
             // 
             this.miQueueRemove.Name = "miQueueRemove";
-            this.miQueueRemove.Size = new System.Drawing.Size(176, 30);
+            this.miQueueRemove.Size = new System.Drawing.Size(184, 30);
             this.miQueueRemove.Text = "✘Remove";
             this.miQueueRemove.Click += new System.EventHandler(this.miQueueRemove_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(173, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(181, 6);
             // 
             // miQueueEnable
             // 
             this.miQueueEnable.Name = "miQueueEnable";
-            this.miQueueEnable.Size = new System.Drawing.Size(176, 30);
+            this.miQueueEnable.Size = new System.Drawing.Size(184, 30);
             this.miQueueEnable.Text = "＋Enable";
             this.miQueueEnable.Click += new System.EventHandler(this.miQueueEnable_Click);
             // 
             // miQueueDisable
             // 
             this.miQueueDisable.Name = "miQueueDisable";
-            this.miQueueDisable.Size = new System.Drawing.Size(176, 30);
+            this.miQueueDisable.Size = new System.Drawing.Size(184, 30);
             this.miQueueDisable.Text = "－Disable";
             this.miQueueDisable.Click += new System.EventHandler(this.miQueueDisable_Click);
             // 
@@ -346,7 +346,7 @@
             this.dgcQueueFileSize.MinimumWidth = 3;
             this.dgcQueueFileSize.Name = "dgcQueueFileSize";
             this.dgcQueueFileSize.ReadOnly = true;
-            this.dgcQueueFileSize.Width = 80;
+            this.dgcQueueFileSize.Width = 90;
             // 
             // dgcQueueDone
             // 
@@ -356,7 +356,7 @@
             this.dgcQueueDone.HeaderText = "Done";
             this.dgcQueueDone.Name = "dgcQueueDone";
             this.dgcQueueDone.ReadOnly = true;
-            this.dgcQueueDone.Width = 80;
+            this.dgcQueueDone.Width = 90;
             // 
             // dgcQueuePerc
             // 
@@ -501,7 +501,7 @@
             this.tpPreQueue.Margin = new System.Windows.Forms.Padding(2);
             this.tpPreQueue.Name = "tpPreQueue";
             this.tpPreQueue.Padding = new System.Windows.Forms.Padding(2);
-            this.tpPreQueue.Size = new System.Drawing.Size(922, 412);
+            this.tpPreQueue.Size = new System.Drawing.Size(1027, 412);
             this.tpPreQueue.TabIndex = 1;
             this.tpPreQueue.Text = "PreQueue";
             this.tpPreQueue.UseVisualStyleBackColor = true;
@@ -526,7 +526,7 @@
             this.dgvPreQueue.Name = "dgvPreQueue";
             this.dgvPreQueue.RowHeadersWidth = 18;
             this.dgvPreQueue.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPreQueue.Size = new System.Drawing.Size(918, 376);
+            this.dgvPreQueue.Size = new System.Drawing.Size(1023, 376);
             this.dgvPreQueue.TabIndex = 1;
             this.dgvPreQueue.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvPreQueue_KeyDown);
             this.dgvPreQueue.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvPreQueue_KeyUp);
@@ -539,7 +539,7 @@
             this.dgcPreQueueFileName.HeaderText = "Filename";
             this.dgcPreQueueFileName.MinimumWidth = 4;
             this.dgcPreQueueFileName.Name = "dgcPreQueueFileName";
-            this.dgcPreQueueFileName.Width = 400;
+            this.dgcPreQueueFileName.Width = 600;
             // 
             // dgcPreQueueFileSize
             // 
@@ -550,7 +550,7 @@
             this.dgcPreQueueFileSize.MinimumWidth = 3;
             this.dgcPreQueueFileSize.Name = "dgcPreQueueFileSize";
             this.dgcPreQueueFileSize.ReadOnly = true;
-            this.dgcPreQueueFileSize.Width = 79;
+            this.dgcPreQueueFileSize.Width = 90;
             // 
             // dgcPreQueueStatusText
             // 
@@ -584,7 +584,7 @@
             this.tsbPreQueueDown});
             this.toolStrip2.Location = new System.Drawing.Point(2, 2);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(918, 32);
+            this.toolStrip2.Size = new System.Drawing.Size(1023, 32);
             this.toolStrip2.TabIndex = 0;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -675,7 +675,7 @@
             this.tpAdd.Location = new System.Drawing.Point(4, 25);
             this.tpAdd.Name = "tpAdd";
             this.tpAdd.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAdd.Size = new System.Drawing.Size(922, 412);
+            this.tpAdd.Size = new System.Drawing.Size(1027, 412);
             this.tpAdd.TabIndex = 4;
             this.tpAdd.Text = "Add";
             this.tpAdd.UseVisualStyleBackColor = true;
@@ -687,7 +687,7 @@
             this.tbText.Multiline = true;
             this.tbText.Name = "tbText";
             this.tbText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tbText.Size = new System.Drawing.Size(916, 374);
+            this.tbText.Size = new System.Drawing.Size(1021, 374);
             this.tbText.TabIndex = 2;
             this.tbText.WordWrap = false;
             this.tbText.TextChanged += new System.EventHandler(this.tbText_TextChanged);
@@ -702,7 +702,7 @@
             this.tsbAdd});
             this.toolStrip3.Location = new System.Drawing.Point(3, 3);
             this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size(916, 32);
+            this.toolStrip3.Size = new System.Drawing.Size(1021, 32);
             this.toolStrip3.TabIndex = 3;
             this.toolStrip3.Text = "toolStrip3";
             // 
@@ -758,7 +758,7 @@
             this.tpSettings.Margin = new System.Windows.Forms.Padding(2);
             this.tpSettings.Name = "tpSettings";
             this.tpSettings.Padding = new System.Windows.Forms.Padding(2);
-            this.tpSettings.Size = new System.Drawing.Size(922, 412);
+            this.tpSettings.Size = new System.Drawing.Size(1027, 412);
             this.tpSettings.TabIndex = 2;
             this.tpSettings.Text = "Settings";
             this.tpSettings.UseVisualStyleBackColor = true;
@@ -876,7 +876,7 @@
             this.tpLog.Margin = new System.Windows.Forms.Padding(2);
             this.tpLog.Name = "tpLog";
             this.tpLog.Padding = new System.Windows.Forms.Padding(2);
-            this.tpLog.Size = new System.Drawing.Size(922, 412);
+            this.tpLog.Size = new System.Drawing.Size(1027, 412);
             this.tpLog.TabIndex = 3;
             this.tpLog.Text = "Log";
             this.tpLog.UseVisualStyleBackColor = true;
@@ -900,7 +900,7 @@
             this.dgvLog.ReadOnly = true;
             this.dgvLog.RowHeadersVisible = false;
             this.dgvLog.RowTemplate.Height = 18;
-            this.dgvLog.Size = new System.Drawing.Size(918, 408);
+            this.dgvLog.Size = new System.Drawing.Size(1023, 408);
             this.dgvLog.TabIndex = 0;
             this.dgvLog.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLog_CellDoubleClick);
             // 
@@ -927,7 +927,7 @@
             this.dgcLogMsg.Name = "dgcLogMsg";
             this.dgcLogMsg.ReadOnly = true;
             this.dgcLogMsg.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dgcLogMsg.Width = 700;
+            this.dgcLogMsg.Width = 800;
             // 
             // someConfig1
             // 
@@ -995,10 +995,6 @@
         private System.Windows.Forms.BindingSource bsPreQueue;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton tsbPreQueueStartAll;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgcPreQueueFileName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgcPreQueueFileSize;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgcPreQueueStatusText;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgcPewQueue;
         private System.Windows.Forms.TabPage tpAdd;
         private System.Windows.Forms.TextBox tbText;
         private System.Windows.Forms.ToolStrip toolStrip3;
@@ -1036,11 +1032,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem miQueueEnable;
         private System.Windows.Forms.ToolStripMenuItem miQueueDisable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgcLogTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgcLogMsg;
         private System.Windows.Forms.CheckBox chShutdown;
         private MyLIB.Components.MyMcFlatComboBox cbFontSize;
         private System.Windows.Forms.Label label2;
+        private Classes.SomeConfig someConfig1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcQueueFileName;
         private MyLib.Components.DataGridViewColorMarkColumn dgcQueueStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcQueueFileSize;
@@ -1049,7 +1044,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcQueueSpeed;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcQueueETL;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcQueueFolder;
-        private Classes.SomeConfig someConfig1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgcPreQueueFileName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgcPreQueueFileSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgcPreQueueStatusText;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgcPewQueue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgcLogTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgcLogMsg;
     }
 }
 
