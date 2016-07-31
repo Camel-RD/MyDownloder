@@ -218,38 +218,38 @@
             this.miQueueEnable,
             this.miQueueDisable});
             this.menuDgvQueue.Name = "menuDgvQueue";
-            this.menuDgvQueue.Size = new System.Drawing.Size(185, 130);
+            this.menuDgvQueue.Size = new System.Drawing.Size(177, 130);
             // 
             // miQueueReset
             // 
             this.miQueueReset.Name = "miQueueReset";
-            this.miQueueReset.Size = new System.Drawing.Size(184, 30);
+            this.miQueueReset.Size = new System.Drawing.Size(176, 30);
             this.miQueueReset.Text = "↺ Reset";
             this.miQueueReset.Click += new System.EventHandler(this.miQueueReset_Click);
             // 
             // miQueueRemove
             // 
             this.miQueueRemove.Name = "miQueueRemove";
-            this.miQueueRemove.Size = new System.Drawing.Size(184, 30);
+            this.miQueueRemove.Size = new System.Drawing.Size(176, 30);
             this.miQueueRemove.Text = "✘Remove";
             this.miQueueRemove.Click += new System.EventHandler(this.miQueueRemove_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(181, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(173, 6);
             // 
             // miQueueEnable
             // 
             this.miQueueEnable.Name = "miQueueEnable";
-            this.miQueueEnable.Size = new System.Drawing.Size(184, 30);
+            this.miQueueEnable.Size = new System.Drawing.Size(176, 30);
             this.miQueueEnable.Text = "＋Enable";
             this.miQueueEnable.Click += new System.EventHandler(this.miQueueEnable_Click);
             // 
             // miQueueDisable
             // 
             this.miQueueDisable.Name = "miQueueDisable";
-            this.miQueueDisable.Size = new System.Drawing.Size(184, 30);
+            this.miQueueDisable.Size = new System.Drawing.Size(176, 30);
             this.miQueueDisable.Text = "－Disable";
             this.miQueueDisable.Click += new System.EventHandler(this.miQueueDisable_Click);
             // 
