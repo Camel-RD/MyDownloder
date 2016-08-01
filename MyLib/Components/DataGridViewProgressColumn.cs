@@ -69,9 +69,10 @@ namespace MyLIB.Components
 
                 var s = progressVal.ToString() + "%";
                 var sz = g.MeasureString(s, cellStyle.Font);
+                int dy = (cellBounds.Height - this.DataGridView.RowTemplate.Height) / 2;
 
                 g.FillRectangle(barColorBrush, cellBounds.X + 2, cellBounds.Y + 2, Convert.ToInt32((percentage * cellBounds.Width - 4)), cellBounds.Height - 4);
-                g.DrawString(s, cellStyle.Font, foreColorBrush, cellBounds.X + (cellBounds.Width / 2) - sz.Width / 2 - 5, cellBounds.Y + 2);
+                g.DrawString(s, cellStyle.Font, foreColorBrush, cellBounds.X + (cellBounds.Width / 2) - sz.Width / 2 - 5, cellBounds.Y + 2 + dy);
             }
             catch (Exception e) { }
 

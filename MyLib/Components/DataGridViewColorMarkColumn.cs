@@ -79,10 +79,12 @@ namespace MyDownloader.MyLib.Components
                     rowIndex, cellState, value, formattedValue, errorText,
                     cellStyle, advancedBorderStyle, (paintParts & ~DataGridViewPaintParts.ContentForeground));
 
-                int rsz = cellBounds.Height - 8;
-                g.FillEllipse(markColorBrush, cellBounds.X + 2, cellBounds.Y + 4, rsz, rsz);
+                int rsz = this.DataGridView.RowTemplate.Height - 8;
+                int dy = (cellBounds.Height - this.DataGridView.RowTemplate.Height) / 2;
+
+                g.FillEllipse(markColorBrush, cellBounds.X + 2, cellBounds.Y + 4 + dy, rsz, rsz);
                 //g.FillRectangle(markColorBrush, cellBounds.X + 2, cellBounds.Y + 4, rsz, rsz);
-                g.DrawString(text, cellStyle.Font, foreColorBrush, cellBounds.X + 4 + rsz, cellBounds.Y + 2);
+                g.DrawString(text, cellStyle.Font, foreColorBrush, cellBounds.X + 4 + rsz, cellBounds.Y + 2 + dy);
             }
             catch (Exception e) { }
 
