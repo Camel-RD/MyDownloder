@@ -625,15 +625,19 @@ namespace MyDownloader
                 request.Timeout = 3000;
                 WebResponse response = request.GetResponse();
                 FileSize = response.ContentLength;
+                FileName = null;
                 bool acceptRanges = String.Compare(response.Headers["Accept-Ranges"], "bytes", true) == 0;
                 string cd = response.Headers.Get("Content-Disposition");
                 if (cd != null)
                 {
                     int k1 = cd.IndexOf('"') + 1;
-                    int k2 = cd.IndexOf('"', k1) - 1;
-                    FileName = cd.Substring(k1, k2 - k1 + 1);
+                    if(k1 > 0)
+                    {
+                        int k2 = cd.IndexOf('"', k1) + 1;
+                        FileName = cd.Substring(k1, k2 - k1 + 1);
+                    }
                 }
-                else
+                if(string.IsNullOrEmpty(FileName))
                 {
                     FileName = Path.GetFileName(uri.LocalPath);
                 }
