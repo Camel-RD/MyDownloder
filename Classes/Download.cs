@@ -651,13 +651,14 @@ namespace MyDownloader
                 if (cd != null)
                 {
                     int k1 = cd.IndexOf('"') + 1;
-                    if(k1 > 0)
+                    if (k1 > 0)
                     {
-                        int k2 = cd.IndexOf('"', k1) + 1;
-                        FileName = cd.Substring(k1, k2 - k1 + 1);
+                        int k2 = cd.IndexOf('"', k1) - 1;
+                        if (k2 > k1)
+                            FileName = cd.Substring(k1, k2 - k1 + 1);
                     }
                 }
-                if(string.IsNullOrEmpty(FileName))
+                if (string.IsNullOrEmpty(FileName))
                 {
                     FileName = Path.GetFileName(uri.LocalPath);
                 }
@@ -673,7 +674,7 @@ namespace MyDownloader
 
                 acceptRanges = String.Compare(response.Headers["Accept-Ranges"], "bytes", true) == 0;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 ErrorText = "Url check failed.";
                 LogError(e.Message, ErrorText);
