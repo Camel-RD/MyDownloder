@@ -59,6 +59,7 @@
             this.stProgress = new System.Windows.Forms.ToolStripProgressBar();
             this.menuDgvQueue = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.miQueueReset = new System.Windows.Forms.ToolStripMenuItem();
+            this.miQueueRecover = new System.Windows.Forms.ToolStripMenuItem();
             this.miQueueRemove = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.miQueueEnable = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,6 +84,7 @@
             this.tsbQueueEnable = new System.Windows.Forms.ToolStripButton();
             this.tsbQueueDisable = new System.Windows.Forms.ToolStripButton();
             this.tsbReset = new System.Windows.Forms.ToolStripButton();
+            this.tsbRecover = new System.Windows.Forms.ToolStripButton();
             this.tpPreQueue = new System.Windows.Forms.TabPage();
             this.dgvPreQueue = new MyLIB.Components.MyDataGridView();
             this.dgcPreQueueFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -213,43 +215,51 @@
             this.menuDgvQueue.ImageScalingSize = new System.Drawing.Size(21, 21);
             this.menuDgvQueue.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miQueueReset,
+            this.miQueueRecover,
             this.miQueueRemove,
             this.toolStripSeparator1,
             this.miQueueEnable,
             this.miQueueDisable});
             this.menuDgvQueue.Name = "menuDgvQueue";
-            this.menuDgvQueue.Size = new System.Drawing.Size(177, 130);
+            this.menuDgvQueue.Size = new System.Drawing.Size(271, 160);
             // 
             // miQueueReset
             // 
             this.miQueueReset.Name = "miQueueReset";
-            this.miQueueReset.Size = new System.Drawing.Size(176, 30);
+            this.miQueueReset.Size = new System.Drawing.Size(270, 30);
             this.miQueueReset.Text = "↺ Reset";
             this.miQueueReset.Click += new System.EventHandler(this.miQueueReset_Click);
+            // 
+            // miQueueRecover
+            // 
+            this.miQueueRecover.Name = "miQueueRecover";
+            this.miQueueRecover.Size = new System.Drawing.Size(270, 30);
+            this.miQueueRecover.Text = "↺ Recover from error";
+            this.miQueueRecover.Click += new System.EventHandler(this.miQueueRecover_Click);
             // 
             // miQueueRemove
             // 
             this.miQueueRemove.Name = "miQueueRemove";
-            this.miQueueRemove.Size = new System.Drawing.Size(176, 30);
+            this.miQueueRemove.Size = new System.Drawing.Size(270, 30);
             this.miQueueRemove.Text = "✘Remove";
             this.miQueueRemove.Click += new System.EventHandler(this.miQueueRemove_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(173, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(267, 6);
             // 
             // miQueueEnable
             // 
             this.miQueueEnable.Name = "miQueueEnable";
-            this.miQueueEnable.Size = new System.Drawing.Size(176, 30);
+            this.miQueueEnable.Size = new System.Drawing.Size(270, 30);
             this.miQueueEnable.Text = "＋Enable";
             this.miQueueEnable.Click += new System.EventHandler(this.miQueueEnable_Click);
             // 
             // miQueueDisable
             // 
             this.miQueueDisable.Name = "miQueueDisable";
-            this.miQueueDisable.Size = new System.Drawing.Size(176, 30);
+            this.miQueueDisable.Size = new System.Drawing.Size(270, 30);
             this.miQueueDisable.Text = "－Disable";
             this.miQueueDisable.Click += new System.EventHandler(this.miQueueDisable_Click);
             // 
@@ -405,7 +415,8 @@
             this.tsbQueueDown,
             this.tsbQueueEnable,
             this.tsbQueueDisable,
-            this.tsbReset});
+            this.tsbReset,
+            this.tsbRecover});
             this.toolStrip4.Location = new System.Drawing.Point(2, 2);
             this.toolStrip4.Name = "toolStrip4";
             this.toolStrip4.Size = new System.Drawing.Size(1023, 32);
@@ -492,6 +503,16 @@
             this.tsbReset.Size = new System.Drawing.Size(84, 29);
             this.tsbReset.Text = "↺ Reset";
             this.tsbReset.Click += new System.EventHandler(this.tsbReset_Click);
+            // 
+            // tsbRecover
+            // 
+            this.tsbRecover.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbRecover.Image = ((System.Drawing.Image)(resources.GetObject("tsbRecover.Image")));
+            this.tsbRecover.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbRecover.Name = "tsbRecover";
+            this.tsbRecover.Size = new System.Drawing.Size(106, 29);
+            this.tsbRecover.Text = "↺ Recover";
+            this.tsbRecover.Click += new System.EventHandler(this.tsbRecover_Click);
             // 
             // tpPreQueue
             // 
@@ -1050,6 +1071,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcPewQueue;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcLogTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcLogMsg;
+        private System.Windows.Forms.ToolStripButton tsbRecover;
+        private System.Windows.Forms.ToolStripMenuItem miQueueRecover;
     }
 }
 

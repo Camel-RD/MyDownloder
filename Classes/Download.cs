@@ -578,6 +578,26 @@ namespace MyDownloader
             Status = EDownloadStatus.Ready;
         }
 
+        public void Recover()
+        {
+            lock (this)
+            {
+                if (Status != EDownloadStatus.Error) return;
+                RecoverA();
+            }
+        }
+
+        public void RecoverA()
+        {
+            if (string.IsNullOrEmpty(FullFileName)) return;
+            if (!File.Exists(FullFileName)) return;
+            var fi = new FileInfo(FullFileName);
+            if (fi.Length > FileSize) return;
+            BytesRead = fi.Length;
+            ErrorText = "";
+            Status = EDownloadStatus.Stopped;
+        }
+
         public void Remove()
         {
             lock (this)

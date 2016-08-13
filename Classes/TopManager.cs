@@ -192,7 +192,8 @@ namespace MyDownloader
         public void OnAllompleted()
         {
             DownloaderState = EDownloaderState.Completed;
-            ShutDown();
+            if(Settings.ShutDown)
+                ShutDown();
         }
 
         public void ShutDown()
@@ -288,6 +289,15 @@ namespace MyDownloader
             {
                 foreach (var d in dl)
                     d.Reset();
+            });
+        }
+
+        public void RecoverInQueue(List<Download> dl)
+        {
+            Task.Run(() =>
+            {
+                foreach (var d in dl)
+                    d.Recover();
             });
         }
 

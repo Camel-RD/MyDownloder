@@ -508,6 +508,18 @@ namespace MyDownloader
             TopManager.ReSetInQueue(dl);
         }
 
+        private void tsbRecover_Click(object sender, EventArgs e)
+        {
+            var dl = GetSelectedInQueue();
+            TopManager.RecoverInQueue(dl);
+        }
+
+        private void miQueueRecover_Click(object sender, EventArgs e)
+        {
+            var dl = GetSelectedInQueue();
+            TopManager.RecoverInQueue(dl);
+        }
+
         private void tsbQueueDisable_Click(object sender, EventArgs e)
         {
             var dl = GetSelectedInQueue();
@@ -646,5 +658,6 @@ namespace MyDownloader
                     break;
             }
         }
+
     }
 }
