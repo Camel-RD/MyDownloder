@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +27,12 @@ namespace MyDownloader
             TopManager.MainForm = this;
             TopManager.LoadSettings();
             this.Font = new Font(this.Font.FontFamily, TopManager.Settings.FontSize);
+
+            fPreviousExecutionState = SetThreadExecutionState(ES_CONTINUOUS | ES_SYSTEM_REQUIRED);
+            if (fPreviousExecutionState == 0)
+            {
+                MessageBox.Show("Failed to enable \"don`t sleep\" mode.");
+            }
         }
 
         public List<string> FoundLinks = new List<string>();
@@ -33,6 +40,12 @@ namespace MyDownloader
         private bool EnableTextChangeMonitor = true;
         private bool TextNotParsed = false;
 
+        private uint fPreviousExecutionState;
+
+        [DllImport("kernel32.dll")]
+        public static extern uint SetThreadExecutionState(uint esFlags);
+        public const uint ES_CONTINUOUS = 0x80000000;
+        public const uint ES_SYSTEM_REQUIRED = 0x00000001;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -55,6 +68,11 @@ namespace MyDownloader
             await TopManager.Stop();
             TopManager.SaveSetings();
             TopManager.SaveData();
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            SetThreadExecutionState(fPreviousExecutionState);
         }
 
         private void btDownloadTo_Click(object sender, EventArgs e)

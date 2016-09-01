@@ -221,45 +221,45 @@
             this.miQueueEnable,
             this.miQueueDisable});
             this.menuDgvQueue.Name = "menuDgvQueue";
-            this.menuDgvQueue.Size = new System.Drawing.Size(271, 160);
+            this.menuDgvQueue.Size = new System.Drawing.Size(263, 160);
             // 
             // miQueueReset
             // 
             this.miQueueReset.Name = "miQueueReset";
-            this.miQueueReset.Size = new System.Drawing.Size(270, 30);
+            this.miQueueReset.Size = new System.Drawing.Size(262, 30);
             this.miQueueReset.Text = "↺ Reset";
             this.miQueueReset.Click += new System.EventHandler(this.miQueueReset_Click);
             // 
             // miQueueRecover
             // 
             this.miQueueRecover.Name = "miQueueRecover";
-            this.miQueueRecover.Size = new System.Drawing.Size(270, 30);
+            this.miQueueRecover.Size = new System.Drawing.Size(262, 30);
             this.miQueueRecover.Text = "↺ Recover from error";
             this.miQueueRecover.Click += new System.EventHandler(this.miQueueRecover_Click);
             // 
             // miQueueRemove
             // 
             this.miQueueRemove.Name = "miQueueRemove";
-            this.miQueueRemove.Size = new System.Drawing.Size(270, 30);
+            this.miQueueRemove.Size = new System.Drawing.Size(262, 30);
             this.miQueueRemove.Text = "✘Remove";
             this.miQueueRemove.Click += new System.EventHandler(this.miQueueRemove_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(267, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(259, 6);
             // 
             // miQueueEnable
             // 
             this.miQueueEnable.Name = "miQueueEnable";
-            this.miQueueEnable.Size = new System.Drawing.Size(270, 30);
+            this.miQueueEnable.Size = new System.Drawing.Size(262, 30);
             this.miQueueEnable.Text = "＋Enable";
             this.miQueueEnable.Click += new System.EventHandler(this.miQueueEnable_Click);
             // 
             // miQueueDisable
             // 
             this.miQueueDisable.Name = "miQueueDisable";
-            this.miQueueDisable.Size = new System.Drawing.Size(270, 30);
+            this.miQueueDisable.Size = new System.Drawing.Size(262, 30);
             this.miQueueDisable.Text = "－Disable";
             this.miQueueDisable.Click += new System.EventHandler(this.miQueueDisable_Click);
             // 
@@ -970,6 +970,7 @@
             this.Name = "Form1";
             this.Text = "MyDownloader";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsPreQueue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsLog)).EndInit();
