@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Net;
+using System.Net.Security;
 using System.IO;
 using System.Threading;
 using System.Diagnostics;
@@ -49,6 +50,12 @@ namespace MyDownloader
 
         [XmlIgnore]
         public bool Reseting = false;
+
+        static Download()
+        {
+            ServicePointManager.ServerCertificateValidationCallback = new
+                RemoteCertificateValidationCallback(delegate { return true; });
+        }
 
         public Download()
         {
