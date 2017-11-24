@@ -8,3 +8,4 @@ C:\A1-docs\c_net\MyDownloader\obj\Debug\MyDownloader.csproj.GenerateResource.Cac
 C:\A1-docs\c_net\MyDownloader\obj\Debug\MyDownloader.exe
 C:\A1-docs\c_net\MyDownloader\obj\Debug\MyDownloader.pdb
 C:\A1-docs\c_net\MyDownloader\obj\Debug\MyDownloader.FormShutdown.resources
+C:\A1-docs\c_net\MyDownloader\obj\Debug\MyDownloader.csproj.CoreCompileInputs.cache

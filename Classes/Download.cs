@@ -51,6 +51,9 @@ namespace MyDownloader
         [XmlIgnore]
         public bool Reseting = false;
 
+        [XmlIgnore]
+        public bool Reconnecting = false;
+
         static Download()
         {
             ServicePointManager.ServerCertificateValidationCallback = new
@@ -709,6 +712,8 @@ namespace MyDownloader
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
             if (BytesRead > 0) request.AddRange(BytesRead);
             request.Timeout = 3000;
+            request.ReadWriteTimeout = 5000;
+            request.ContinueTimeout = 5000;
 
             WebResponse response = request.GetResponse();
             //result.MimeType = res.ContentType;

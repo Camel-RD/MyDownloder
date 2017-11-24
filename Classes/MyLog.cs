@@ -12,6 +12,11 @@ namespace MyDownloader
     {
         public string Msg { get; set; } = null;
         public DateTime TimeStamp { get; set; }
+
+        public string GetAsString()
+        {
+            return $"[{TimeStamp:dd.MM.yy HH:mm}]\n{Msg}";
+        }
     }
 
     public class MyLog : BindingList<MyLogMsg>
@@ -24,6 +29,16 @@ namespace MyDownloader
                 TimeStamp = DateTime.Now
             };
             this.Add(logmsg);
+        }
+
+        public string GetAsString()
+        {
+            var sb = new StringBuilder();
+            foreach(var it in this)
+            {
+                sb.AppendLine(it.GetAsString());
+            }
+            return sb.ToString();
         }
     }
 }

@@ -68,6 +68,7 @@ namespace MyDownloader
             await TopManager.Stop();
             TopManager.SaveSetings();
             TopManager.SaveData();
+            TopManager.SaveLog();
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -90,6 +91,7 @@ namespace MyDownloader
             if (fs < 8) fs = 8;
             if (fs > 16) fs = 16;
             cbFontSize.SelectedIndex = fs - 8;
+            chReconnect.Checked = TopManager.Settings.ReconnectAfterError == 1;
         }
 
         public void UpdateSettings()
@@ -98,6 +100,7 @@ namespace MyDownloader
             TopManager.Settings.ShutDown = chShutdown.Checked;
             int fs = int.Parse(cbFontSize.SelectedValue as string);
             TopManager.Settings.FontSize = fs;
+            TopManager.Settings.ReconnectAfterError = chReconnect.Checked ? 1 : 0;
 
         }
 

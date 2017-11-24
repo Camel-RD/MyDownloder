@@ -119,6 +119,7 @@
             this.dgcLogTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgcLogMsg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.someConfig1 = new MyDownloader.Classes.SomeConfig(this.components);
+            this.chReconnect = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.bsPreQueue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsLog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsQueue)).BeginInit();
@@ -769,6 +770,7 @@
             // 
             // tpSettings
             // 
+            this.tpSettings.Controls.Add(this.chReconnect);
             this.tpSettings.Controls.Add(this.cbFontSize);
             this.tpSettings.Controls.Add(this.chShutdown);
             this.tpSettings.Controls.Add(this.btDownloadTo);
@@ -958,6 +960,16 @@
             this.someConfig1.ColorReady = System.Drawing.Color.LightSkyBlue;
             this.someConfig1.ColorRunning = System.Drawing.Color.PaleGoldenrod;
             // 
+            // chReconnect
+            // 
+            this.chReconnect.AutoSize = true;
+            this.chReconnect.Location = new System.Drawing.Point(31, 221);
+            this.chReconnect.Name = "chReconnect";
+            this.chReconnect.Size = new System.Drawing.Size(192, 20);
+            this.chReconnect.TabIndex = 5;
+            this.chReconnect.Text = "Try to Reconnect after error";
+            this.chReconnect.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1074,6 +1086,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcLogMsg;
         private System.Windows.Forms.ToolStripButton tsbRecover;
         private System.Windows.Forms.ToolStripMenuItem miQueueRecover;
+        private System.Windows.Forms.CheckBox chReconnect;
     }
 }
 

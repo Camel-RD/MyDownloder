@@ -13,6 +13,7 @@ namespace MyDownloader
         private string _downloadTo = "";
         private bool _shutdown = false;
         private int _fontSize = 12;
+        private int _reconnectAfterError = 11;
 
         [XmlIgnore]
         public bool HasChanged = false;
@@ -46,6 +47,17 @@ namespace MyDownloader
             {
                 if (value == _fontSize) return;
                 _fontSize = value;
+                HasChanged = true;
+            }
+        }
+
+        public int ReconnectAfterError
+        {
+            get { return _reconnectAfterError; }
+            set
+            {
+                if (value == _reconnectAfterError) return;
+                _reconnectAfterError = value;
                 HasChanged = true;
             }
         }

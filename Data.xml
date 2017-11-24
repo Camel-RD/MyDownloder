@@ -1,5 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
 <MyData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Queue />
+  <Queue>
+    <Download>
+      <Status>Completed</Status>
+      <Url>http://31.14.136.26/rt/%5bAsenshi%5d%20Kujira%20no%20Kora%20wa%20Sajou%20ni%20Utau%20-%20Children%20of%20the%20Whales%20-%2007%20%5b6536BFC0%5d.mkv</Url>
+      <FileName>[Asenshi] Kujira no Kora wa Sajou ni Utau - Children of the Whales - 07 [6536BFC0].mkv</FileName>
+      <Folder>C:\A0</Folder>
+      <FileSize>1294424491</FileSize>
+      <BytesRead>1294424491</BytesRead>
+      <Enabled>true</Enabled>
+    </Download>
+    <Download>
+      <Status>Completed</Status>
+      <Url>http://31.14.136.26/rt/%5bCommie%5d%203-gatsu%20no%20Lion%20-%2028%20%5bB21CC1D2%5d.mkv</Url>
+      <FileName>[Commie] 3-gatsu no Lion - 28 [B21CC1D2].mkv</FileName>
+      <Folder>C:\A0</Folder>
+      <FileSize>299179852</FileSize>
+      <BytesRead>299179852</BytesRead>
+      <Enabled>true</Enabled>
+    </Download>
+    <Download>
+      <Status>Stopped</Status>
+      <Url>http://31.14.136.26/rt/%5bHorribleSubs%5d%20Binan%20Koukou%20Chikyuu%20Bouei-bu%20Love!%20Love!%20Love!%20-%2001%20%5b720p%5d.mkv</Url>
+      <FileName>[HorribleSubs] Binan Koukou Chikyuu Bouei-bu Love! Love! Love! - 01 [720p].mkv</FileName>
+      <Folder>C:\A0</Folder>
+      <FileSize>800553235</FileSize>
+      <BytesRead>208477533</BytesRead>
+      <Enabled>false</Enabled>
+    </Download>
+    <Download>
+      <Status>Stopped</Status>
+      <Url>http://31.14.136.26/rt/%5bHorribleSubs%5d%20Blend%20S%20-%2007%20%5b720p%5d.mkv</Url>
+      <FileName>[HorribleSubs] Blend S - 07 [720p].mkv</FileName>
+      <Folder>C:\A0</Folder>
+      <FileSize>338571174</FileSize>
+      <BytesRead>32382553</BytesRead>
+      <Enabled>false</Enabled>
+    </Download>
+    <Download>
+      <Status>Stopped</Status>
+      <Url>http://31.14.136.26/rt/%5bHorribleSubs%5d%20Boku%20no%20Kanojo%20ga%20Majimesugiru%20Sho-bitch%20na%20Ken%20-%2006%20%5b720p%5d.mkv</Url>
+      <FileName>[HorribleSubs] Boku no Kanojo ga Majimesugiru Sho-bitch na Ken - 06 [720p].mkv</FileName>
+      <Folder>C:\A0</Folder>
+      <FileSize>268062416</FileSize>
+      <BytesRead>85982074</BytesRead>
+      <Enabled>false</Enabled>
+    </Download>
+    <Download>
+      <Status>Stopped</Status>
+      <Url>http://31.14.136.26/rt/%5bHorribleSubs%5d%20Boku%20no%20Kanojo%20ga%20Majimesugiru%20Sho-bitch%20na%20Ken%20-%2007%20%5b720p%5d.mkv</Url>
+      <FileName>[HorribleSubs] Boku no Kanojo ga Majimesugiru Sho-bitch na Ken - 07 [720p].mkv</FileName>
+      <Folder>C:\A0</Folder>
+      <FileSize>283727120</FileSize>
+      <BytesRead>12634593</BytesRead>
+      <Enabled>false</Enabled>
+    </Download>
+    <Download>
+      <Status>Stopped</Status>
+      <Url>http://31.14.136.26/rt/%5bHorribleSubs%5d%20Dies%20Irae%20-%2006%20%5b720p%5d.mkv</Url>
+      <FileName>[HorribleSubs] Dies Irae - 06 [720p].mkv</FileName>
+      <Folder>C:\A0</Folder>
+      <FileSize>337320239</FileSize>
+      <BytesRead>128965933</BytesRead>
+      <Enabled>false</Enabled>
+    </Download>
+    <Download>
+      <Status>Stopped</Status>
+      <Url>http://31.14.136.26/rt/%5bHorribleSubs%5d%20Evil%20or%20Live%20-%2006%20%5b720p%5d.mkv</Url>
+      <FileName>[HorribleSubs] Evil or Live - 06 [720p].mkv</FileName>
+      <Folder>C:\A0</Folder>
+      <FileSize>337890373</FileSize>
+      <BytesRead>270137713</BytesRead>
+      <Enabled>false</Enabled>
+    </Download>
+    <Download>
+      <Status>Stopped</Status>
+      <Url>http://31.14.136.26/rt/%5bHorribleSubs%5d%20Evil%20or%20Live%20-%2007%20%5b720p%5d.mkv</Url>
+      <FileName>[HorribleSubs] Evil or Live - 07 [720p].mkv</FileName>
+      <Folder>C:\A0</Folder>
+      <FileSize>338247363</FileSize>
+      <BytesRead>150245433</BytesRead>
+      <Enabled>false</Enabled>
+    </Download>
+    <Download>
+      <Status>Stopped</Status>
+      <Url>http://31.14.136.26/rt/%5bHorribleSubs%5d%20Garo%20-%20Vanishing%20Line%20-%2007%20%5b720p%5d.mkv</Url>
+      <FileName>[HorribleSubs] Garo - Vanishing Line - 07 [720p].mkv</FileName>
+      <Folder>C:\A0</Folder>
+      <FileSize>342405677</FileSize>
+      <BytesRead>60442293</BytesRead>
+      <Enabled>false</Enabled>
+    </Download>
+    <Download>
+      <Status>Stopped</Status>
+      <Url>http://31.14.136.26/rt/%5bHorribleSubs%5d%20Inuyashiki%20-%2006%20%5b720p%5d.mkv</Url>
+      <FileName>[HorribleSubs] Inuyashiki - 06 [720p].mkv</FileName>
+      <Folder>C:\A0</Folder>
+      <FileSize>251330994</FileSize>
+      <BytesRead>86218594</BytesRead>
+      <Enabled>false</Enabled>
+    </Download>
+    <Download>
+      <Status>Stopped</Status>
+      <Url>http://31.14.136.26/rt/%5bHorribleSubs%5d%20Konohana%20Kitan%20-%2007%20%5b720p%5d.mkv</Url>
+      <FileName>[HorribleSubs] Konohana Kitan - 07 [720p].mkv</FileName>
+      <Folder>C:\A0</Folder>
+      <FileSize>338202021</FileSize>
+      <BytesRead>13668273</BytesRead>
+      <Enabled>false</Enabled>
+    </Download>
+    <Download>
+      <Status>Stopped</Status>
+      <Url>http://31.14.136.26/rt/%5bHorribleSubs%5d%20Konohana%20Kitan%20-%2008%20%5b720p%5d.mkv</Url>
+      <FileName>[HorribleSubs] Konohana Kitan - 08 [720p].mkv</FileName>
+      <Folder>C:\A0</Folder>
+      <FileSize>336910574</FileSize>
+      <BytesRead>53860613</BytesRead>
+      <Enabled>false</Enabled>
+    </Download>
+    <Download>
+      <Status>Stopped</Status>
+      <Url>http://31.14.136.26/rt/%5bHorribleSubs%5d%20Net-juu%20no%20Susume%20-%2007%20%5b720p%5d.mkv</Url>
+      <FileName>[HorribleSubs] Net-juu no Susume - 07 [720p].mkv</FileName>
+      <Folder>C:\A0</Folder>
+      <FileSize>337771602</FileSize>
+      <BytesRead>149499373</BytesRead>
+      <Enabled>false</Enabled>
+    </Download>
+    <Download>
+      <Status>Stopped</Status>
+      <Url>http://31.14.136.26/rt/%5bHorribleSubs%5d%20Shokugeki%20no%20Soma%20S3%20-%2007%20%5b720p%5d.mkv</Url>
+      <FileName>[HorribleSubs] Shokugeki no Soma S3 - 07 [720p].mkv</FileName>
+      <Folder>C:\A0</Folder>
+      <FileSize>346049795</FileSize>
+      <BytesRead>53378813</BytesRead>
+      <Enabled>false</Enabled>
+    </Download>
+    <Download>
+      <Status>Stopped</Status>
+      <Url>http://31.14.136.26/rt/%5bHorribleSubs%5d%20Shokugeki%20no%20Soma%20S3%20-%2008%20%5b720p%5d.mkv</Url>
+      <FileName>[HorribleSubs] Shokugeki no Soma S3 - 08 [720p].mkv</FileName>
+      <Folder>C:\A0</Folder>
+      <FileSize>346127110</FileSize>
+      <BytesRead>119410233</BytesRead>
+      <Enabled>false</Enabled>
+    </Download>
+    <Download>
+      <Status>Stopped</Status>
+      <Url>http://31.14.136.26/rt/%5bHorribleSubs%5d%20Shoujo%20Shuumatsu%20Ryokou%20-%2007%20%5b720p%5d.mkv</Url>
+      <FileName>[HorribleSubs] Shoujo Shuumatsu Ryokou - 07 [720p].mkv</FileName>
+      <Folder>C:\A0</Folder>
+      <FileSize>252124188</FileSize>
+      <BytesRead>16227654</BytesRead>
+      <Enabled>false</Enabled>
+    </Download>
+    <Download>
+      <Status>Stopped</Status>
+      <Url>http://31.14.136.26/rt/%5bHorribleSubs%5d%20Kekkai%20Sensen%20&amp;%20Beyond%20-%2007%20%5b720p%5d.mkv</Url>
+      <FileName>[HorribleSubs] Kekkai Sensen &amp; Beyond - 07 [720p].mkv</FileName>
+      <Folder>C:\A0</Folder>
+      <FileSize>343016883</FileSize>
+      <BytesRead>174659553</BytesRead>
+      <Enabled>false</Enabled>
+    </Download>
+  </Queue>
   <PreQueue />
 </MyData>

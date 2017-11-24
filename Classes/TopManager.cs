@@ -31,6 +31,7 @@ namespace MyDownloader
         public static string MyFolder = Utils.GetMyFolderX();
         public static string SettingsFileName = MyFolder + "\\Config.xml";
         public static string DataFileName = MyFolder + "\\Data.xml";
+        public static string LogFileName = MyFolder + "\\Log.txt";
 
         public int MaxParalelDownloads = 1;
 
@@ -97,6 +98,7 @@ namespace MyDownloader
             {
                 if (RunningDownloads.Contains(d)) return;
                 RunningDownloads.Add(d);
+                if (d.Reconnecting) d.Reconnecting = false;
                 DownloaderState = EDownloaderState.Running;
             }
             else if (newstatus == EDownloadStatus.Completed)
@@ -104,7 +106,7 @@ namespace MyDownloader
                 if (!RunningDownloads.Contains(d)) return;
                 RunningDownloads.Remove(d);
                 if (IsCompleted())
-                    OnAllompleted();
+                    OnAllCompleted();
                 else if (RunningDownloads.Count < MaxParalelDownloads)
                     StartNext();
             }
@@ -119,7 +121,7 @@ namespace MyDownloader
                 if (d.Removing)
                     d.RemoveA();
 
-                if(DownloaderState == EDownloaderState.Stopping)
+                if (DownloaderState == EDownloaderState.Stopping)
                 {
                     if(RunningDownloads.Count == 0)
                         DownloaderState = EDownloaderState.Stopped;
@@ -127,7 +129,11 @@ namespace MyDownloader
                 else if (DownloaderState == EDownloaderState.Running)
                 {
                     if (IsCompleted())
-                        OnAllompleted();
+                        OnAllCompleted();
+                    else if (d.Reconnecting)
+                    {
+                        StartNext();
+                    }
                     else if (RunningDownloads.Count < MaxParalelDownloads)
                         StartNext();
                 }
@@ -143,10 +149,29 @@ namespace MyDownloader
                 }
                 else if (DownloaderState == EDownloaderState.Running)
                 {
+                    if (Settings.ReconnectAfterError == 1)
+                    {
+                        if (d.Reconnecting)
+                        {
+                            d.Reconnecting = false;
+                        }
+                        else if (oldstatus == EDownloadStatus.Running)
+                        {
+                            d.Reconnecting = true;
+                            RunningDownloads.Add(d);
+                            d.Recover();
+                            return;
+                        }
+                    }
+
                     if (IsCompleted())
-                        OnAllompleted();
+                    {
+                        OnAllCompleted();
+                    }
                     else if (RunningDownloads.Count < MaxParalelDownloads)
+                    {
                         StartNext();
+                    }
                 }
             }
         }
@@ -175,6 +200,18 @@ namespace MyDownloader
             }
         }
 
+        public void RestartCurrent()
+        {
+            if (DownloaderState != EDownloaderState.Running) return;
+            foreach (var d in Queue)
+            {
+                if (RunningDownloads.Contains(d)) continue;
+                if (!d.CanStartDownload()) continue;
+                Task.Run(() => d.Start());
+                break;
+            }
+        }
+
         public async Task Stop()
         {
             if (DownloaderState != EDownloaderState.Running) return;
@@ -189,7 +226,7 @@ namespace MyDownloader
             });
         }
 
-        public void OnAllompleted()
+        public void OnAllCompleted()
         {
             DownloaderState = EDownloaderState.Completed;
             if(Settings.ShutDown)
@@ -452,5 +489,15 @@ namespace MyDownloader
             }
         }
 
+        public void SaveLog()
+        {
+            var s = Log.GetAsString();
+            if (string.IsNullOrEmpty(s)) return;
+            if (File.Exists(LogFileName))
+                File.Delete(LogFileName);
+            File.WriteAllText(LogFileName, s);
+        }
+
     }
+
 }
