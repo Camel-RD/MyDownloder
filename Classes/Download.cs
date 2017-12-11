@@ -52,7 +52,7 @@ namespace MyDownloader
         public bool Reseting = false;
 
         [XmlIgnore]
-        public bool Reconnecting = false;
+        public int Reconnecting = 0;
 
         static Download()
         {

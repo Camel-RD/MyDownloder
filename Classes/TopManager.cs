@@ -98,7 +98,7 @@ namespace MyDownloader
             {
                 if (RunningDownloads.Contains(d)) return;
                 RunningDownloads.Add(d);
-                if (d.Reconnecting) d.Reconnecting = false;
+                if (d.Reconnecting > 0) d.Reconnecting = 0;
                 DownloaderState = EDownloaderState.Running;
             }
             else if (newstatus == EDownloadStatus.Completed)
@@ -130,7 +130,7 @@ namespace MyDownloader
                 {
                     if (IsCompleted())
                         OnAllCompleted();
-                    else if (d.Reconnecting)
+                    else if (d.Reconnecting > 0)
                     {
                         StartNext();
                     }
@@ -141,29 +141,29 @@ namespace MyDownloader
             else if (newstatus == EDownloadStatus.Error)
             {
                 if (!RunningDownloads.Contains(d)) return;
-                RunningDownloads.Remove(d);
                 if (DownloaderState == EDownloaderState.Stopping)
                 {
+                    RunningDownloads.Remove(d);
                     if (RunningDownloads.Count == 0)
                         DownloaderState = EDownloaderState.Stopped;
                 }
                 else if (DownloaderState == EDownloaderState.Running)
                 {
-                    if (Settings.ReconnectAfterError == 1)
+                    if (Settings.ReconnectAfterError > 0)
                     {
-                        if (d.Reconnecting)
+                        if (d.Reconnecting >= Settings.ReconnectAfterError)
                         {
-                            d.Reconnecting = false;
+                            d.Reconnecting = 0;
                         }
-                        else if (oldstatus == EDownloadStatus.Running)
+                        else 
                         {
-                            d.Reconnecting = true;
-                            RunningDownloads.Add(d);
+                            d.Reconnecting ++;
                             d.Recover();
                             return;
                         }
                     }
 
+                    RunningDownloads.Remove(d);
                     if (IsCompleted())
                     {
                         OnAllCompleted();

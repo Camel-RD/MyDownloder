@@ -91,7 +91,7 @@ namespace MyDownloader
             if (fs < 8) fs = 8;
             if (fs > 16) fs = 16;
             cbFontSize.SelectedIndex = fs - 8;
-            chReconnect.Checked = TopManager.Settings.ReconnectAfterError == 1;
+            tbReconnectTries.Text = TopManager.Settings.ReconnectAfterError.ToString();
         }
 
         public void UpdateSettings()
@@ -100,8 +100,10 @@ namespace MyDownloader
             TopManager.Settings.ShutDown = chShutdown.Checked;
             int fs = int.Parse(cbFontSize.SelectedValue as string);
             TopManager.Settings.FontSize = fs;
-            TopManager.Settings.ReconnectAfterError = chReconnect.Checked ? 1 : 0;
-
+            int rtr = 0;
+            if (!int.TryParse(tbReconnectTries.Text, out rtr))
+                rtr = 0;
+            TopManager.Settings.ReconnectAfterError = rtr;
         }
 
         private void tpSettings_Enter(object sender, EventArgs e)
@@ -136,8 +138,9 @@ namespace MyDownloader
             foreach (Match m in LinkScrubber.Matches(text))
             {
                 if (m.Value.EndsWith("/")) continue;
-                if (FoundLinks.Contains(m.Value)) continue;
-                FoundLinks.Add(m.Value);
+                var s = m.Value.Replace("amp;", "");
+                if (FoundLinks.Contains(s)) continue;
+                FoundLinks.Add(s);
             }
             return FoundLinks.Count > 0;
         }

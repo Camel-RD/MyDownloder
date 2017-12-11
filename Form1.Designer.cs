@@ -119,7 +119,8 @@
             this.dgcLogTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgcLogMsg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.someConfig1 = new MyDownloader.Classes.SomeConfig(this.components);
-            this.chReconnect = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbReconnectTries = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.bsPreQueue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsLog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsQueue)).BeginInit();
@@ -770,7 +771,8 @@
             // 
             // tpSettings
             // 
-            this.tpSettings.Controls.Add(this.chReconnect);
+            this.tpSettings.Controls.Add(this.tbReconnectTries);
+            this.tpSettings.Controls.Add(this.label3);
             this.tpSettings.Controls.Add(this.cbFontSize);
             this.tpSettings.Controls.Add(this.chShutdown);
             this.tpSettings.Controls.Add(this.btDownloadTo);
@@ -960,15 +962,21 @@
             this.someConfig1.ColorReady = System.Drawing.Color.LightSkyBlue;
             this.someConfig1.ColorRunning = System.Drawing.Color.PaleGoldenrod;
             // 
-            // chReconnect
+            // label3
             // 
-            this.chReconnect.AutoSize = true;
-            this.chReconnect.Location = new System.Drawing.Point(31, 221);
-            this.chReconnect.Name = "chReconnect";
-            this.chReconnect.Size = new System.Drawing.Size(192, 20);
-            this.chReconnect.TabIndex = 5;
-            this.chReconnect.Text = "Try to Reconnect after error";
-            this.chReconnect.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(30, 228);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 16);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Reconnect tries:";
+            // 
+            // tbReconnectTries
+            // 
+            this.tbReconnectTries.Location = new System.Drawing.Point(31, 247);
+            this.tbReconnectTries.Name = "tbReconnectTries";
+            this.tbReconnectTries.Size = new System.Drawing.Size(60, 22);
+            this.tbReconnectTries.TabIndex = 6;
             // 
             // Form1
             // 
@@ -1086,7 +1094,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcLogMsg;
         private System.Windows.Forms.ToolStripButton tsbRecover;
         private System.Windows.Forms.ToolStripMenuItem miQueueRecover;
-        private System.Windows.Forms.CheckBox chReconnect;
+        private System.Windows.Forms.TextBox tbReconnectTries;
+        private System.Windows.Forms.Label label3;
     }
 }
 

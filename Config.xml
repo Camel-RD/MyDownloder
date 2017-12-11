@@ -3,5 +3,5 @@
   <DownloadTo>C:\A0</DownloadTo>
   <ShutDown>false</ShutDown>
   <FontSize>10</FontSize>
-  <ReconnectAfterError>1</ReconnectAfterError>
+  <ReconnectAfterError>3</ReconnectAfterError>
 </MySettings>
