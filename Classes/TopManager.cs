@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.IO;
 using System.Xml;
@@ -98,7 +99,7 @@ namespace MyDownloader
             {
                 if (RunningDownloads.Contains(d)) return;
                 RunningDownloads.Add(d);
-                if (d.Reconnecting > 0) d.Reconnecting = 0;
+                d.Reconnecting = 0;
                 DownloaderState = EDownloaderState.Running;
             }
             else if (newstatus == EDownloadStatus.Completed)
@@ -140,7 +141,7 @@ namespace MyDownloader
             }
             else if (newstatus == EDownloadStatus.Error)
             {
-                if (!RunningDownloads.Contains(d)) return;
+                //if (!RunningDownloads.Contains(d)) return;
                 if (DownloaderState == EDownloaderState.Stopping)
                 {
                     RunningDownloads.Remove(d);
@@ -149,15 +150,15 @@ namespace MyDownloader
                 }
                 else if (DownloaderState == EDownloaderState.Running)
                 {
-                    if (Settings.ReconnectAfterError > 0)
+                    if (oldstatus == EDownloadStatus.Running && Settings.ReconnectAfterError > 0)
                     {
-                        if (d.Reconnecting >= Settings.ReconnectAfterError)
+                        if (d.Reconnecting > 0)
                         {
                             d.Reconnecting = 0;
                         }
                         else 
                         {
-                            d.Reconnecting ++;
+                            d.Reconnecting = 1;
                             d.Recover();
                             return;
                         }

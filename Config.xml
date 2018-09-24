@@ -2,6 +2,6 @@
 <MySettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <DownloadTo>C:\A0</DownloadTo>
   <ShutDown>false</ShutDown>
-  <FontSize>10</FontSize>
-  <ReconnectAfterError>3</ReconnectAfterError>
+  <FontSize>11</FontSize>
+  <ReconnectAfterError>5</ReconnectAfterError>
 </MySettings>

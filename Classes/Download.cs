@@ -696,26 +696,62 @@ namespace MyDownloader
             Status = EDownloadStatus.Ready;
         }
 
-        private void CreateStreams(bool resuming)
+        public enum CreateStreamsRet
         {
-            if (!resuming)
+            OK,
+            FileError,
+            ConnectionError,
+            Not200,
+            Other
+        }
+
+        private CreateStreamsRet CreateStreams(bool resuming, out Exception ex)
+        {
+            ex = null;
+            try
             {
-                fs = new FileStream(this.FullFileName, FileMode.Create, FileAccess.Write);
-                //fs.SetLength(FileSize);
+                if (!resuming)
+                {
+                    fs = new FileStream(this.FullFileName, FileMode.Create, FileAccess.Write);
+                    //fs.SetLength(FileSize);
+                }
+                else
+                {
+                    fs = new FileStream(this.FullFileName, FileMode.Append, FileAccess.Write);
+                    fs.Position = BytesRead;
+                }
             }
-            else
+            catch(Exception ex1)
             {
-                fs = new FileStream(this.FullFileName, FileMode.Append, FileAccess.Write);
-                fs.Position = BytesRead;
+                ex = ex1;
+                return CreateStreamsRet.FileError;
             }
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
-            if (BytesRead > 0) request.AddRange(BytesRead);
-            request.Timeout = 3000;
-            request.ReadWriteTimeout = 5000;
-            request.ContinueTimeout = 5000;
+            HttpWebResponse response = null;
+            try
+            {
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
+                if (BytesRead > 0) request.AddRange(BytesRead);
+                request.Timeout = 3000;
+                request.ReadWriteTimeout = 5000;
+                request.ContinueTimeout = 5000;
 
-            WebResponse response = request.GetResponse();
+                response = (HttpWebResponse)request.GetResponse();
+            }
+            catch (WebException ex1)
+            {
+                ex = ex1;
+                if (ex1.Status == WebExceptionStatus.ProtocolError)
+                    return CreateStreamsRet.Not200;
+                return CreateStreamsRet.ConnectionError;
+            }
+            catch (Exception ex1)
+            {
+                ex = ex1;
+                return CreateStreamsRet.ConnectionError;
+            }
+
+            if (response.StatusCode != HttpStatusCode.OK) return CreateStreamsRet.Not200;
             //result.MimeType = res.ContentType;
             //result.LastModified = response.LastModified;
             if (!resuming)//(FileSize == 0)
@@ -724,7 +760,16 @@ namespace MyDownloader
             }
             acceptRanges = String.Compare(response.Headers["Accept-Ranges"], "bytes", true) == 0;
 
-            ns = response.GetResponseStream();
+            try
+            {
+                ns = response.GetResponseStream();
+            }
+            catch (Exception ex1)
+            {
+                ex = ex1;
+                return CreateStreamsRet.Other;
+            }
+            return CreateStreamsRet.OK;
         }
 
 
@@ -763,7 +808,6 @@ namespace MyDownloader
                 Status = EDownloadStatus.Preparing;
 
                 FileInfo fi = new FileInfo(FullFileName);
-
                 if (resuming)
                 {
                     if (!File.Exists(FullFileName))
@@ -803,7 +847,37 @@ namespace MyDownloader
                     this.FileName = Path.GetFileNameWithoutExtension(FullFileName) + fext;
                 }
 
-                CreateStreams(resuming);
+                bool isok = false;
+                Exception exret = null;
+
+                for (int i = 0; i <= TopManager.st.Settings.ReconnectAfterError; i++)
+                {
+                    if (i > 0)
+                        Thread.Sleep(5000);
+
+                    var rt = CreateStreams(resuming, out exret);
+                    if (rt == CreateStreamsRet.OK)
+                    {
+                        isok = true;
+                        break;
+                    }
+
+                    isok = false;
+                    NullStreams();
+                    LogError(exret.Message);
+
+                    if (rt != CreateStreamsRet.ConnectionError)
+                    {
+                        Status = EDownloadStatus.Error;
+                        return;
+                    }
+                }
+
+                if (!isok)
+                {
+                    Status = EDownloadStatus.Error;
+                    return;
+                }
 
                 if (BytesRead > FileSize)
                 {
